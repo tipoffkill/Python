@@ -34,3 +34,38 @@ Sử dụng các thuật toán không có thông tin (BFS, DFS, IDDFS, UCS, Back
 BFS: Tìm kiếm theo chiều rộng.
 
 ![BFS Animation](https://raw.githubusercontent.com/tipoffkill/Python/main/gifs/bfs.gif)
+
+DFS: Tìm kiếm theo chiều sâu.
+
+![DFS Animation](https://raw.githubusercontent.com/tipoffkill/Python/main/gifs/dfs.gif)
+
+IDDFS: Tìm kiếm theo chiều sâu lặp.
+
+![IDDFS Animation](https://raw.githubusercontent.com/tipoffkill/Python/main/gifs/iddfs.gif)
+
+UCS: Tìm kiếm chi phí đồng nhất.
+
+![UCS Animation](https://raw.githubusercontent.com/tipoffkill/Python/main/gifs/ucs.gif)
+
+Backtracking: Tìm kiếm quay lui.
+
+![Backtracking Animation](https://raw.githubusercontent.com/tipoffkill/Python/main/gifs/backtrack.gif)
+
+CSP Backtracking: Tìm kiếm quay lui với ràng buộc.
+
+![CSP Backtracking Animation](https://raw.githubusercontent.com/tipoffkill/Python/main/gifs/csp_bt.gif)
+
+Sensorless BFS: Tìm kiếm không cảm biến.
+
+![Sensorless BFS Backtracking Animation](https://raw.githubusercontent.com/tipoffkill/Python/main/gifs/sensorless.gif)
+
+Sensor BFS: Tìm kiếm với cảm biến.
+
+![Sensor BFS Backtracking Animation](https://raw.githubusercontent.com/tipoffkill/Python/main/gifs/sensor_bfs.gif)
+
+1.3 Hình ảnh so sánh hiệu suất
+
+Chương trình tạo ra hai biểu đồ so sánh hiệu suất (thời gian giải và số bước) của các thuật toán, được lưu dưới dạng hình ảnh:
+
+
+
