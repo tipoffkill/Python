@@ -67,9 +67,34 @@ Sensor BFS: Tìm kiếm với cảm biến.
 
 Chương trình tạo ra hai biểu đồ so sánh hiệu suất (thời gian giải và số bước) của các thuật toán, được lưu dưới dạng hình ảnh:
 
-comparison_time.png: So sánh thời gian giải của các thuật toán.
+![Comparison Time Image](https://raw.githubusercontent.com/tipoffkill/Python/main/comparison_time.png)
 
-comparison_steps.png: So sánh số bước của các thuật toán.
+So sánh thời gian giải của các thuật toán.
 
+![Comparison Steps Image](https://raw.githubusercontent.com/tipoffkill/Python/main/comparison_steps.png)
 
+So sánh số bước của các thuật toán.
 
+1.4 Nhận xét về hiệu suất
+
+BFS và UCS thường tìm được đường đi tối ưu nhưng tốn nhiều thời gian hơn khi không gian trạng thái lớn.
+
+DFS và IDDFS nhanh hơn nhưng không đảm bảo đường đi ngắn nhất, đôi khi bị kẹt ở độ sâu lớn.
+
+Backtracking và CSP Backtracking có hiệu suất tương tự nhau, nhưng dễ bị giới hạn độ sâu.
+
+Sensorless BFS và Sensor BFS tốn nhiều tài nguyên hơn do phải xử lý tập hợp trạng thái (belief states).
+
+2. Các thuật toán tìm kiếm có thông tin
+
+2.1 Trình bày các thành phần chính của bài toán tìm kiếm và giải pháp
+
+Bài toán tìm kiếm: Tương tự như trên, nhưng các thuật toán sử dụng hàm heuristic (Manhattan Distance) để định hướng tìm kiếm.
+
+Hàm heuristic: Tổng khoảng cách Manhattan của mỗi ô số so với vị trí đích của nó.
+
+Giải pháp:
+
+Sử dụng các thuật toán có thông tin (Greedy, A*, IDA*, Hill Climbing, Steepest Ascent Hill Climbing, Stochastic Hill Climbing, Simulated Annealing, Beam Search, Genetic Algorithm, Q-Learning) để tìm đường đi hiệu quả hơn.
+
+Đường đi vẫn là chuỗi các hành động (U, D, L, R).
