@@ -67,5 +67,9 @@ Sensor BFS: Tìm kiếm với cảm biến.
 
 Chương trình tạo ra hai biểu đồ so sánh hiệu suất (thời gian giải và số bước) của các thuật toán, được lưu dưới dạng hình ảnh:
 
+comparison_time.png: So sánh thời gian giải của các thuật toán.
+
+comparison_steps.png: So sánh số bước của các thuật toán.
+
 
 
