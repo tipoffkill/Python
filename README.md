@@ -32,3 +32,5 @@ Sử dụng các thuật toán không có thông tin (BFS, DFS, IDDFS, UCS, Back
 1.2 Hình ảnh GIF của từng thuật toán khi áp dụng lên trò chơi
 
 BFS: Tìm kiếm theo chiều rộng.
+
+![BFS Animation](https://raw.githubusercontent.com/tipoffkill/Python/main/gifs/bfs.gif)
