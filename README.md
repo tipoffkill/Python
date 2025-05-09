@@ -1,35 +1,35 @@
-# Python
-8-Puzzle Solver
-
-Mục tiêu
+# 🧩 Python 8-Puzzle Solver 🧩
 
 Đồ án này nhằm xây dựng một chương trình giải bài toán 8-Puzzle (trò chơi ghép hình 3x3) sử dụng các thuật toán tìm kiếm không có thông tin và có thông tin. Chương trình cung cấp giao diện trực quan để hiển thị quá trình giải, tạo hoạt hình cho từng bước di chuyển, và so sánh hiệu suất giữa các thuật toán.
 
-Nội dung
+---
 
-1. Các thuật toán tìm kiếm không có thông tin
+## 🎯 Mục tiêu
 
-1.1 Trình bày các thành phần chính của bài toán tìm kiếm và giải pháp
+Đồ án này nhằm xây dựng một chương trình giải bài toán 8-Puzzle (trò chơi ghép hình 3x3) sử dụng các thuật toán tìm kiếm không có thông tin và có thông tin. Chương trình cung cấp giao diện trực quan để hiển thị quá trình giải, tạo hoạt hình cho từng bước di chuyển, và so sánh hiệu suất giữa các thuật toán.
 
-Bài toán tìm kiếm:
+---
 
-Không gian trạng thái: Mỗi trạng thái là một cách sắp xếp các ô số (0-8) trên bàn cờ 3x3, trong đó 0 là ô trống.
+## 📜 Nội dung
 
-Trạng thái ban đầu: Một cấu hình ngẫu nhiên của các ô số (ví dụ: (2, 6, 5, 1, 3, 8, 4, 7, 0)).
+### 1. Các thuật toán tìm kiếm không có thông tin
 
-Trạng thái đích: Cấu hình mục tiêu (1, 2, 3, 4, 5, 6, 7, 8, 0).
+#### 1.1 Trình bày các thành phần chính của bài toán tìm kiếm và giải pháp
 
-Hành động: Di chuyển ô trống lên (U), xuống (D), trái (L), hoặc phải (R) để hoán đổi với ô bên cạnh.
+**Bài toán tìm kiếm:**
 
-Chi phí: Mỗi bước di chuyển có chi phí là 1.
+*   **Không gian trạng thái:** Mỗi trạng thái là một cách sắp xếp các ô số (0-8) trên bàn cờ 3x3, trong đó 0 là ô trống.
+*   **Trạng thái ban đầu:** Một cấu hình ngẫu nhiên của các ô số (ví dụ: (2, 6, 5, 1, 3, 8, 4, 7, 0)).
+*   **Trạng thái đích:** Cấu hình mục tiêu (1, 2, 3, 4, 5, 6, 7, 8, 0).
+*   **Hành động:** Di chuyển ô trống lên (U), xuống (D), trái (L), hoặc phải (R) để hoán đổi với ô bên cạnh.
+*   **Chi phí:** Mỗi bước di chuyển có chi phí là 1.
 
-Giải pháp:
+**Giải pháp:**
 
-Sử dụng các thuật toán không có thông tin (BFS, DFS, IDDFS, UCS, Backtracking, CSP Backtracking, Sensorless BFS, Sensor BFS) để tìm đường đi từ trạng thái ban đầu đến trạng thái đích.
+*   Sử dụng các thuật toán không có thông tin (BFS, DFS, IDDFS, UCS, Backtracking, CSP Backtracking, Sensorless BFS, Sensor BFS) để tìm đường đi từ trạng thái ban đầu đến trạng thái đích.
+*   Đường đi là một chuỗi các hành động (U, D, L, R) dẫn đến trạng thái đích.
 
-Đường đi là một chuỗi các hành động (U, D, L, R) dẫn đến trạng thái đích.
-
-1.2 Hình ảnh GIF của từng thuật toán khi áp dụng lên trò chơi
+#### 1.2 Hình ảnh GIF của từng thuật toán khi áp dụng lên trò chơi
 
 BFS: Tìm kiếm theo chiều rộng.
 
@@ -63,43 +63,39 @@ Sensor BFS: Tìm kiếm với cảm biến.
 
 ![Sensor BFS Backtracking Animation](https://raw.githubusercontent.com/tipoffkill/Python/main/gifs/sensor_bfs.gif)
 
-1.3 Hình ảnh so sánh hiệu suất
+#### 1.3 Hình ảnh so sánh hiệu suất
 
 Chương trình tạo ra hai biểu đồ so sánh hiệu suất (thời gian giải và số bước) của các thuật toán, được lưu dưới dạng hình ảnh:
 
 ![Comparison Time Image](https://raw.githubusercontent.com/tipoffkill/Python/main/comparison_time.png)
-
-So sánh thời gian giải của các thuật toán.
+*So sánh thời gian giải của các thuật toán.*
 
 ![Comparison Steps Image](https://raw.githubusercontent.com/tipoffkill/Python/main/comparison_steps.png)
+*So sánh số bước của các thuật toán.*
 
-So sánh số bước của các thuật toán.
+#### 1.4 Nhận xét về hiệu suất
 
-1.4 Nhận xét về hiệu suất
+*   BFS và UCS thường tìm được đường đi tối ưu nhưng tốn nhiều thời gian hơn khi không gian trạng thái lớn.
+*   DFS và IDDFS nhanh hơn nhưng không đảm bảo đường đi ngắn nhất, đôi khi bị kẹt ở độ sâu lớn.
+*   Backtracking và CSP Backtracking có hiệu suất tương tự nhau, nhưng dễ bị giới hạn độ sâu.
+*   Sensorless BFS và Sensor BFS tốn nhiều tài nguyên hơn do phải xử lý tập hợp trạng thái (belief states).
 
-BFS và UCS thường tìm được đường đi tối ưu nhưng tốn nhiều thời gian hơn khi không gian trạng thái lớn.
+---
 
-DFS và IDDFS nhanh hơn nhưng không đảm bảo đường đi ngắn nhất, đôi khi bị kẹt ở độ sâu lớn.
+### 2. Các thuật toán tìm kiếm có thông tin
 
-Backtracking và CSP Backtracking có hiệu suất tương tự nhau, nhưng dễ bị giới hạn độ sâu.
+#### 2.1 Trình bày các thành phần chính của bài toán tìm kiếm và giải pháp
 
-Sensorless BFS và Sensor BFS tốn nhiều tài nguyên hơn do phải xử lý tập hợp trạng thái (belief states).
+**Bài toán tìm kiếm:** Tương tự như trên, nhưng các thuật toán sử dụng hàm heuristic (Manhattan Distance) để định hướng tìm kiếm.
 
-2. Các thuật toán tìm kiếm có thông tin
+**Hàm heuristic:** Tổng khoảng cách Manhattan của mỗi ô số so với vị trí đích của nó.
 
-2.1 Trình bày các thành phần chính của bài toán tìm kiếm và giải pháp
+**Giải pháp:**
 
-Bài toán tìm kiếm: Tương tự như trên, nhưng các thuật toán sử dụng hàm heuristic (Manhattan Distance) để định hướng tìm kiếm.
+*   Sử dụng các thuật toán có thông tin (Greedy, A*, IDA*, Hill Climbing, Steepest Ascent Hill Climbing, Stochastic Hill Climbing, Simulated Annealing, Beam Search, Genetic Algorithm, Q-Learning) để tìm đường đi hiệu quả hơn.
+*   Đường đi vẫn là chuỗi các hành động (U, D, L, R).
 
-Hàm heuristic: Tổng khoảng cách Manhattan của mỗi ô số so với vị trí đích của nó.
-
-Giải pháp:
-
-Sử dụng các thuật toán có thông tin (Greedy, A*, IDA*, Hill Climbing, Steepest Ascent Hill Climbing, Stochastic Hill Climbing, Simulated Annealing, Beam Search, Genetic Algorithm, Q-Learning) để tìm đường đi hiệu quả hơn.
-
-Đường đi vẫn là chuỗi các hành động (U, D, L, R).
-
-2.2 Hình ảnh GIF của từng thuật toán khi áp dụng lên trò chơi
+#### 2.2 Hình ảnh GIF của từng thuật toán khi áp dụng lên trò chơi
 
 Các thuật toán có thông tin được triển khai:
 
@@ -107,11 +103,11 @@ Greedy: Tìm kiếm tham lam dựa trên heuristic.
 
 ![Greedy Animation](https://raw.githubusercontent.com/tipoffkill/Python/main/gifs/.gif)
 
-A*: Tìm kiếm tốt nhất dựa trên chi phí và heuristic.
+A\*: Tìm kiếm tốt nhất dựa trên chi phí và heuristic.
 
 ![A* Animation](https://raw.githubusercontent.com/tipoffkill/Python/main/gifs/a_.gif)
 
-IDA*: Tìm kiếm A* lặp.
+IDA\*: Tìm kiếm A* lặp.
 
 ![IDA* Animation](https://raw.githubusercontent.com/tipoffkill/Python/main/gifs/ida_.gif)
 
@@ -125,7 +121,7 @@ Steepest Ascent Hill Climbing: Leo đồi chọn bước tốt nhất.
 
 Stochastic Hill Climbing: Leo đồi ngẫu nhiên.
 
-![ Ascent Hill Climbing Animation](https://raw.githubusercontent.com/tipoffkill/Python/main/gifs/stochastic.gif)
+![Stochastic Ascent Hill Climbing Animation](https://raw.githubusercontent.com/tipoffkill/Python/main/gifs/stochastic.gif)
 
 Simulated Annealing: Giả lập ủ nhiệt.
 
@@ -143,69 +139,77 @@ Q-Learning: Học tăng cường.
 
 ![Q-Learning Animation](https://raw.githubusercontent.com/tipoffkill/Python/main/gifs/q-learning.gif)
 
-2.3 Hình ảnh so sánh hiệu suất
+#### 2.3 Hình ảnh so sánh hiệu suất
 
-Tương tự như trên, các biểu đồ comparison_time.png và comparison_steps.png bao gồm cả các thuật toán có thông tin.
+Tương tự như trên, các biểu đồ `comparison_time.png` và `comparison_steps.png` bao gồm cả các thuật toán có thông tin.
 
 ![Comparison Time Image](https://raw.githubusercontent.com/tipoffkill/Python/main/comparison_time.png)
-
-So sánh thời gian giải của các thuật toán.
+*So sánh thời gian giải của các thuật toán.*
 
 ![Comparison Steps Image](https://raw.githubusercontent.com/tipoffkill/Python/main/comparison_steps.png)
+*So sánh số bước của các thuật toán.*
 
-So sánh số bước của các thuật toán.
+#### 2.4 Nhận xét về hiệu suất
 
-2.4 Nhận xét về hiệu suất
+*   A* và IDA* thường cho đường đi tối ưu và hiệu quả hơn các thuật toán không có thông tin.
+*   Greedy nhanh nhưng không đảm bảo đường đi tối ưu.
+*   Hill Climbing và các biến thể dễ bị kẹt ở cực trị cục bộ.
+*   Simulated Annealing và Genetic Algorithm có thể tìm giải pháp tốt nhưng tốn thời gian và phụ thuộc vào tham số.
+*   Q-Learning cần thời gian huấn luyện lâu nhưng có thể tái sử dụng kiến thức.
 
-A* và IDA* thường cho đường đi tối ưu và hiệu quả hơn các thuật toán không có thông tin.
+---
 
-Greedy nhanh nhưng không đảm bảo đường đi tối ưu.
+## 🛠️ Công nghệ sử dụng
 
-Hill Climbing và các biến thể dễ bị kẹt ở cực trị cục bộ.
+*   **Ngôn ngữ:** Python
+*   **Thư viện:**
+    *   Pygame: Tạo giao diện và hoạt hình.
+    *   Matplotlib: Vẽ biểu đồ so sánh hiệu suất.
+*   **Môi trường:** Python 3.8 trở lên
 
-Simulated Annealing và Genetic Algorithm có thể tìm giải pháp tốt nhưng tốn thời gian và phụ thuộc vào tham số.
+---
 
-Q-Learning cần thời gian huấn luyện lâu nhưng có thể tái sử dụng kiến thức.
+## ⚙️ Hướng dẫn cài đặt
 
-Công nghệ sử dụng
+1.  **Clone repository:**
+    ```bash
+    git clone https://github.com/your-username/8-puzzle-solver.git
+    ```
+    *(Lưu ý: Thay `your-username` bằng tên người dùng GitHub của bạn nếu bạn đã fork hoặc clone repository này)*
 
-Ngôn ngữ: Python
+2.  **Cài đặt các thư viện cần thiết:**
+    ```bash
+    pip install pygame matplotlib
+    ```
 
-Thư viện:
+3.  **Chạy giao diện chính:**
+    ```bash
+    python solver.py
+    ```
 
-Pygame: Tạo giao diện và hoạt hình.
+4.  **Chạy kiểm tra hiệu suất và tạo biểu đồ:**
+    ```bash
+    python test.py
+    ```
 
-Matplotlib: Vẽ biểu đồ so sánh hiệu suất.
+---
 
-Môi trường: Python 3.8 trở lên
+## 🚀 Hướng dẫn sử dụng
 
-Hướng dẫn cài đặt
+1.  Mở file `solver.py` để chạy giao diện chính.
+    ```bash
+    python solver.py
+    ```
+2.  Nhấn vào các nút thuật toán (BFS, A*, Hill, v.v.) để xem quá trình giải và hoạt hình.
+3.  Kiểm tra file `test.py` để chạy kiểm tra hiệu suất và tạo biểu đồ so sánh.
+    ```bash
+    python test.py
+    ```
 
-Clone repository:
+---
 
-git clone https://github.com/your-username/8-puzzle-solver.git
+## 👨‍💻 Tác giả
 
+**[Bùi Thành Tâm]** - MSSV: **[23110310]**
 
-Cài đặt các thư viện cần thiết:
-
-pip install pygame matplotlib
-
-Chạy giao diện chính:
-
-python solver.py
-
-Chạy kiểm tra hiệu suất và tạo biểu đồ:
-
-python test.py
-
-Hướng dẫn sử dụng
-
-Mở file solver.py để chạy giao diện chính.
-
-Nhấn vào các nút thuật toán (BFS, A*, Hill, v.v.) để xem quá trình giải và hoạt hình.
-
-Kiểm tra file test.py để chạy kiểm tra hiệu suất và tạo biểu đồ so sánh.
-
-Tác giả
-
-[Bùi Thành Tâm] - MSSV: [23110310]
+---
